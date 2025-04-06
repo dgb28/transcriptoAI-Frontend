@@ -167,7 +167,43 @@
     border-top: 1px solid rgba(255,255,255,0.1);
     text-align: right;
   }
-  
+  /* 1) Make the summary card header flex, with title on left, dropdown on right */
+.summary-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 2) Style the filter-dropdown to match your other components */
+.summary-card .card-header .filter-dropdown {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 8px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* 1) Ensure the closed select’s text is white */
+.summary-card .card-header .filter-dropdown {
+  color: #fff;
+}
+
+/* 2) Style the open‑list options: same background, white text */
+.summary-card .card-header .filter-dropdown option {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #1f1a47;
+}
+
+/* 3) Hover state for options (where supported) */
+.summary-card .card-header .filter-dropdown option:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #1f1a47;
+}
+
   /* download button style */
   .download-button {
     background-color: #FFC107;
@@ -182,6 +218,11 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
   .download-button:hover {
     background-color: #e0a800;
   }
@@ -198,6 +239,33 @@
     background: rgba(255,255,255,0.2);
     border-radius: 4px;
   }
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1f1a47;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  
+  .action-table th,
+  .action-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #3c3270;
+    color: #e0e0ff;
+  }
+  
+  .action-table th {
+    background-color: #3c3270;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .action-table tr:hover {
+    background-color: #453a7a;
+    transition: background-color 0.2s;
+  }
   
   
   /* responsive: stack columns below 768px */
@@ -205,5 +273,30 @@
     .main-row {
       flex-direction: column;
     }
+  }
+  .transcription-line {
+    margin-bottom: 10px;
+  }
+  
+  .sentiment-box {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #fff;
+    vertical-align: middle;
+  }
+  
+  .sentiment-positive {
+    background-color: green;
+  }
+  
+  .sentiment-neutral {
+    background-color: orange;
+  }
+  
+  .sentiment-negative {
+    background-color: red;
   }
   

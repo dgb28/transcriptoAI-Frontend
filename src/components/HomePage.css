@@ -7,6 +7,38 @@ body {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     overflow-x: hidden;
 }
+
+/* Wrap both boxes side by side */
+.upload-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;            /* space between boxes */
+    margin: 2rem 0;
+    flex-wrap: wrap;      /* stack on narrow screens */
+  }
+  
+  /* Duplicate styling for live‑box */
+  .live-box {
+    /* You can override colors if you like, or leave it identical */
+  }
+  
+  /* Center the icon + label vertically */
+  .upload-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Smaller file name text */
+  .file-name {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* Spinner, buttons, etc. stay the same as your existing CSS */
+  
 .upload-box {
     border: 2px solid #f39c12;
     border-radius: 15px;
