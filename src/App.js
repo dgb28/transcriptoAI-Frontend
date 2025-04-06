@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import MeetingView from "./components/MeetingView";  // Import MeetingView page
+import RealTimeTranscription from "./components/RealTimeTranscription";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/meeting-view" element={<MeetingView />} />  {/* Route for MeetingView */}
+        <Route path="/real-time-transcription" element={<RealTimeTranscription />} />  {/* Route for MeetingView */}
+      </Routes>
+    </Router>
   );
 }
 

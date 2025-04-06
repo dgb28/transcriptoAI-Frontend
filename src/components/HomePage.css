@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    overflow-x: hidden;
+}
+.upload-box {
+    border: 2px solid #f39c12;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+.info-box {
+    margin-top: 20px;
+    padding: 20px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .info-box h3 {
+    margin-bottom: 10px;
+    color: #ffd166;
+  }
+  
+.upload-modern-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.upload-modern-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* Headline */
+.upload-modern-box h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Subtext */
+.upload-modern-box p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+/* Upload Label */
+.upload-modern-box .upload-label {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 14px;
+    border: 2px dashed #888;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+/* On hover */
+.upload-modern-box .upload-label:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.upload-modern-box input[type="file"] {
+    display: none;
+}
+
+.upload-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+.upload-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+}
+
+.upload-box h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.upload-box p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #f39c12;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-top: 20px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+.homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---- SHINY BACKGROUND EFFECT ---- */
+.homepage-container::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%);
+    animation: rotate 20s linear infinite;
+    border-radius: 50%;
+    top: -200px;
+    left: -200px;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.header {
+    z-index: 1;
+}
+
+.header h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.header p {
+    color: #cfcfcf;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.upload-label {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-label + label {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px 24px;
+    border-radius: 14px;
+    color: white;
+    border: 2px dashed #888;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.upload-label + label:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #ffffff;
+    transform: scale(1.05);
+}
+
+button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ffb347, #ffcc33);
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 1;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(255, 186, 73, 0.4);
+}
+
+.feature-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px 20px;
+    width: 260px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.5);
+
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.feature-card h3 {
+    color: #f39c12;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
