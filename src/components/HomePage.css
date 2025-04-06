@@ -193,7 +193,7 @@ body {
 }
 
 /* ---- SHINY BACKGROUND EFFECT ---- */
-.homepage-container::before {
+/* .homepage-container::before {
     content: '';
     position: absolute;
     width: 600px;
@@ -209,7 +209,7 @@ body {
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
+} */
 
 .header {
     z-index: 1;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaCloudUploadAlt, FaPlayCircle } from "react-icons/fa";
+import { FaCloudUploadAlt, FaPlayCircle, FaTasks } from "react-icons/fa";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -8,10 +8,12 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // File selection handler
   const handleFileChange = (e) => {
     setFile(e.target.files[0] || null);
   };
 
+  // Upload file and navigate to MeetingView
   const handleUpload = () => {
     if (!file) {
       alert("Please select a file first!");
@@ -37,8 +39,8 @@ const HomePage = () => {
       });
   };
 
+  // Open the Streamlit live-transcription app
   const handleLiveTranscription = () => {
-    // adjust URL to wherever your Streamlit app is hosted
     window.open("http://localhost:8501", "_blank");
   };
 
@@ -49,8 +51,9 @@ const HomePage = () => {
         <p>Transcribe, summarize, and analyze your meetings effortlessly</p>
       </header>
 
-      <section className="upload-section">
-        {/* File‑Upload Box */}
+      {/* Upload + Live boxes side by side */}
+      <div className="upload-section">
+        {/* File Upload Box */}
         <div className="upload-box">
           <div className="upload-area">
             <input
@@ -70,25 +73,12 @@ const HomePage = () => {
           </button>
           {loading && <div className="spinner"></div>}
         </div>
+      </div>
 
-        {/* Live‑Transcription Box */}
-        <div className="upload-box live-box">
-          <div className="upload-area">
-            <FaPlayCircle size={40} />
-            <span>Click here for live transcription</span>
-          </div>
-          <button
-            className="upload-button"
-            onClick={handleLiveTranscription}
-          >
-            Start Live Transcription
-          </button>
-        </div>
-      </section>
-
+      {/* Feature Cards */}
       <section className="features-section">
-        <div className="feature-card">
-          <FaPlayCircle size={40} onClick={redirect}/>
+        <div className="feature-card" onClick={handleLiveTranscription}>
+          <FaPlayCircle size={40} />
           <h3>Real-Time Transcription</h3>
           <p>Transcribe meetings live as they happen.</p>
         </div>

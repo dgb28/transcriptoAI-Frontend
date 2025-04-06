@@ -4,6 +4,8 @@ import { FaDownload } from 'react-icons/fa';
 import './MeetingView.css';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
+import { useNavigate } from 'react-router-dom';
+
 
 const MeetingView = () => {
   const location = useLocation();
@@ -71,6 +73,12 @@ const MeetingView = () => {
     saveAs(blob, "summary.txt");
   };
 
+  const navigate = useNavigate();
+
+  const handleDataViz=()=>{
+    navigate("/meeting-analysis", { state: { result } });
+  }
+
   const handleDownloadActionsExcel = () => {
     const actionsData = result.actions?.actionextractor || [];
     const worksheet = XLSX.utils.json_to_sheet(actionsData);
@@ -114,13 +122,20 @@ const MeetingView = () => {
               })}
             </div>
             <div className="card-footer">
-              <button
-                className="download-button"
-                onClick={handleDownloadTranscript}
-              >
-                <FaDownload /> Download Transcript
-              </button>
-            </div>
+  <button
+    className="data-viz-btn"
+    style={{ marginRight: 'auto' }}
+    onClick={handleDataViz}
+  >
+    Open Analysis
+  </button>
+  <button
+    className="download-button"
+    onClick={handleDownloadTranscript}
+  >
+    <FaDownload /> Download Transcript
+  </button>
+</div>
           </div>
         </div>
 
@@ -131,22 +146,15 @@ const MeetingView = () => {
             <div className="card-header">
               <h2>Summary</h2>
               <select
-                value={summaryFilter}
-                onChange={handleSummaryFilterChange}
-              >
-                <option value="one-line summary">
-                  One Line Summary (20 words)
-                </option>
-                <option value="bullet point summary">
-                  Bullet Point Summary
-                </option>
-                <option value="indepth summary">
-                  Indepth Summary (TLDR on top)
-                </option>
-                <option value="paragraph summary">
-                  Paragraph Summary (50 words)
-                </option>
-              </select>
+  className="filter-dropdown"
+  value={summaryFilter}
+  onChange={handleSummaryFilterChange}
+>
+  <option value="one-line summary">One Line Summary (20 words)</option>
+  <option value="bullet point summary">Bullet Point Summary</option>
+  <option value="indepth summary">Indepth Summary (TLDR on top)</option>
+  <option value="paragraph summary">Paragraph Summary (50 words)</option>
+</select>
             </div>
             <div className="card-content">
               <p>{summary}</p>

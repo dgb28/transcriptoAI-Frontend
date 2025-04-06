@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import MeetingView from "./components/MeetingView";  // Import MeetingView page
 import RealTimeTranscription from "./components/RealTimeTranscription";
 import './App.css';
+import MeetingAnalysis from "./components/MeetingAnalysis";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/meeting-view" element={<MeetingView />} />  {/* Route for MeetingView */}
         <Route path="/real-time-transcription" element={<RealTimeTranscription />} />  {/* Route for MeetingView */}
+        <Route path="/meeting-analysis" element={<MeetingAnalysis />} />  {/* Route for MeetingAnalysis */}
       </Routes>
     </Router>
   );
