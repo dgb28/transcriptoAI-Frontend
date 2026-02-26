@@ -13,7 +13,7 @@ This project was built for a hackathon and aims to streamline post-meeting analy
 
 Everything is displayed inside a fully responsive React-based dashboard, with options to download all outputs in one click.
 
-## 🔄 Workflow
+## 🔄 Workflow for TranscriptoAI
 
 1. *Ingestion* – Upload MP3, WAV, or MP4 via the dashboard  
 2. *Transcription* – Convert speech to text using a transcription module  
